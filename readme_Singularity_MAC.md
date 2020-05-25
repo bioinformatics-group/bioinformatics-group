@@ -4,10 +4,10 @@ I am essentially following along with the [docs](https://sylabs.io/guides/3.0/us
 
 
 
-## 1. 
+## 1.Homebrew 
 Make sure to have HomeBrew installed (can use `/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"` to install).
 
-## 2. 
+## 2. Install Packages
 Install Vagrant and necessary packages using Brew.
 ```
 brew cask install virtualbox && \
@@ -44,7 +44,7 @@ Now you can ssh onto computer A by simply using `ssh A_name`.
 
 You will be prompted for passwords for each machine you will need to use ssh-keygen to create a public/private SSH key pair (you put the public bit in ~/.ssh/authorized_keys on the remote host), I'll leave it to you to figure that bit out. ;)
 
-2. Open a tunnel to the machine.
+2. Open a tunnel to the machine. This will als not forward to the screensharing port thanks to LocalForward.
 3. 5999 is the local port which is being forwarded via SSH to the Screen Sharing port (5900) on the remote host. 
 To connect you now need to go to Finder and hit <cmd>-k to open the “Connect to Server” dialogue. Enter the following into the address bar
 `vnc://localhost:5999`
@@ -53,18 +53,18 @@ And click connect.
 You should see a screenSharing window open up which will allow you to log into your computer.
 4. Open up system preferences and allow virtualbox to be installed!
 
-## 3. 
+## 3. Create VM directory
 Create a directory to be used with your VM.
 `mkdir vm_singularity && cd vm_singularity`
 
-## 4.
-###4.1 
+## 4. Deploy VM
+### 4.1 
 If this folder was used for a previous VM then destroy it using 
 ```
 vagrant destroy && \
     rm Vagrantfile
 ```
-###4.2
+### 4.2
 Now bring up the virtual machine
 
 ```
@@ -74,4 +74,4 @@ export VM= && \
     vagrant ssh
 ```
 
-
+You should now see vagrant@vagrant which means you are on your VM! 
