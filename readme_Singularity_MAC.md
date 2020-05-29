@@ -75,3 +75,7 @@ export VM= && \
 ```
 
 You should now see vagrant@vagrant which means you are on your VM! 
+
+Once dont with the VM, you can `exit` out of it and you may use:
+- `vagrant halt` or `vagrant suspend` which close the machine without destroying its contents so you can later reopen it at the same state with `vagrant up \ vagrant ssh`. There are differences in how these are paused which are subtle but they effectively to the same. Halting will power down the machine and suspending will stop it. More info can be found [here](https://www.vagrantup.com/intro/getting-started/teardown.html). 
+- `vagrant destroy` to completely destroy the machine and its contents. `
