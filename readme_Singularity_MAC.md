@@ -10,10 +10,13 @@ Make sure to have HomeBrew installed (can use `/usr/bin/ruby -e "$(curl -fsSL ht
 ## 2. Install Packages
 Install Vagrant and necessary packages using Brew.
 ```
-brew cask install virtualbox && \
-brew cask install vagrant && \
-brew cask install vagrant-manager
+brew install virtualbox && \
+brew install vagrant && \
+brew install vagrant-manager
 ```
+
+You will almost certainly need to access you preferences to allow "extensions" I had to go into `Security & Privacy` and click on `Details` in the general tab where it was saying some system software requires your attention. I enabled the `Oracle` something or other... I also may have let terminal have Full Disk Write.
+
 If you are working remotely, you may need to access system preferences and allow this plugin to be installed. 
 
 ### Remote access by screenshare (using a mac)
@@ -66,7 +69,7 @@ vagrant destroy && \
 ```
 ### 4.2
 Now bring up the virtual machine
-
+    
 ```
 export VM= && \
     vagrant init $VM && \
@@ -74,8 +77,15 @@ export VM= && \
     vagrant ssh
 ```
 
+I had trouble with this and told it to use `general/debian11` or soemthing like that instead of `$VM` to grab a specific image that has singularity in its repo.
+    
 You should now see vagrant@vagrant which means you are on your VM! 
 
 Once dont with the VM, you can `exit` out of it and you may use:
 - `vagrant halt` or `vagrant suspend` which close the machine without destroying its contents so you can later reopen it at the same state with `vagrant up \ vagrant ssh`. There are differences in how these are paused which are subtle but they effectively to the same. Halting will power down the machine and suspending will stop it. More info can be found [here](https://www.vagrantup.com/intro/getting-started/teardown.html). 
 - `vagrant destroy` to completely destroy the machine and its contents. `
+
+    
+    
+    
+    
