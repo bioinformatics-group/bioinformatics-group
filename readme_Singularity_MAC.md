@@ -77,7 +77,7 @@ export VM= && \
     vagrant ssh
 ```
 
-I had trouble with this and told it to use `general/debian11` or soemthing like that instead of `$VM` to grab a specific image that has singularity in its repo.
+I had trouble with this and told it to use `sylabs/singularity-ce-3.9-ubuntu-bionic64` or soemthing like that instead of `$VM` to grab a specific image that has singularity in its repo.
     
 You should now see vagrant@vagrant which means you are on your VM! 
 
